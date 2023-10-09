@@ -45,7 +45,7 @@ Die Installation hängt von Ihrem System ab. Sollen Sie Linux verwenden, sollte 
 * Conan: https://conan.io/downloads
 * Cmake: https://cmake.org/download
 
-Führen Sie folgendes Kommando in einem Terminal aus:
+Führen Sie folgendes Kommando in einem Terminal aus (egal aus welchem Ordner):
 > conan profile detect --force
 
 Sie sollte in etwa folgende Ausgabe erhalten:
@@ -64,14 +64,14 @@ Stellen Sie sicher, dass Sie diese (noch leere) Gerüst, welches *raylib* als Ab
 
 Laden Sie dazu als erstes die vscode-Erweiterung [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) herunter.
 
-Führen Sie nun folgende Kommandos im Terminal aus:
+Führen Sie nun folgende Kommandos im Terminal aus (aus dem Wurzelverzeichnis dieses Repositories, also *PROG3_Ueb_Asteroids_Lab01*):
 > conan install . --output-folder=build/Release --build=missing
 
 > cd build/Release && cmake ../.. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
 
 Nun sollten Sie das Programm mittels des Befehls 
 
->cmake build .
+>cmake --build .
 
 kompilieren können. Alternativ können Sie auch die Taste F7 drücken oder den entsprechenden *Build* Button in der Fußzeile von vscode betätigen.
 

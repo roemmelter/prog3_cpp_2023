@@ -31,6 +31,11 @@
 *.out
 *.app
 
+# CMake
+CMakeCache.txt
+CMakeFiles/
+
+# VSCode
 .vscode/*
 !.vscode/settings.json
 
