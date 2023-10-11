@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.11)
 
 set(EXECUTABLE_NAME 01_Asteroids)
 
@@ -6,7 +6,7 @@ set(SRC_FILES
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp)
 
 set(INCLUDE_DIRS
-    ${CMAKE_CURRENT_LIST_DIR}/raylib-cpp/v405
+    ${CMAKE_CURRENT_LIST_DIR}/raylib-cpp/v451
     include)
 
 add_executable(${EXECUTABLE_NAME} ${SRC_FILES})
