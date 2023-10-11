@@ -12,12 +12,12 @@ Wir fangen jedoch langsam an. In diesem ersten Lab sollen Sie sich mit der Entwi
 
 
 ### Vorraussetzungen
-Die Übungen sind so konzipiert, dass sie prinzipiell auf jedem System bearbeitet werden können. Es wird jedoch **wärmstens** empfohlen, Linux oder macOS zu verwenden. Nutzen Sie ggf. als Windows-Nutzer die Virtuelle Maschine aus vorigen Veranstaltungen. 
+Die Übungen sind so konzipiert, dass sie prinzipiell auf jedem System bearbeitet werden können. Es wird jedoch **wärmstens** empfohlen, Linux oder macOS zu verwenden. Nutzen Sie ggf. als Windows-Nutzer die virtuelle Maschine aus vorigen Veranstaltungen. 
 
-Als Entwicklungsumgebung kommt [Visual Studio Code (vscode)](https://code.visualstudio.com) zum Einsatz. Stellen Sie sicher, dass Sie vscode auf Ihrem System installiert haben und ausführen können.
+Als Entwicklungsumgebung kommt [Visual Studio Code (vscode)](https://code.visualstudio.com) zum Einsatz. Stellen Sie sicher, dass Sie vscode auf Ihrem System installiert haben und ausführen können. Alle weiteren benötigten Programme installieren wir im Laufe der einzelnen Aufgaben.
 
 ### Abgaben
-Um eine Übung erfolgreich zu bestehen, fertigen Sie ein Protokoll an und geben es (möglichst zeitnah) ab. In den einzelnen Aufgaben ist genauer genannt, was ins Protokoll hinein muss. Generell sollen Sie jedoch folgendes Dokumentieren:
+Um eine Übung erfolgreich zu bestehen, fertigen Sie ein Protokoll an und geben es (möglichst zeitnah) ab. In den einzelnen Aufgaben ist genauer genannt, was ins Protokoll hinein muss. Generell sollen Sie jedoch folgendes dokumentieren:
 * Was haben Sie gelernt?
 * Was hat funktioniert?
 * Was hat nicht funktioniert?
@@ -31,49 +31,32 @@ Stellen Sie sicher, dass sie über einen installierten C++ Compiler (üblicherwe
 ####  Aufabe 00_b
 Im Ordner `00_HelloMediaEngineers` finden Sie eine leere C++ Datei *main.cpp*. Implementieren Sie, analog zur Vorlesung, ein simples Programm, das "Hello Media Engineers" auf der Konsole ausgibt.
 
-Kompilieren Sie dieses Programm über die Kommandozeile und führen Sie es aus! Notieren Sie die benötigten Schritte im Protokoll.
+Kompilieren Sie dieses Programm **über die Konsole** und führen Sie es aus! Notieren Sie die benötigten Schritte im Protokoll.
+
+Hinweis: Sie können natürlich schon in diesem Schritt vscode als Editor verwenden. Kompilieren Sie es aber bitte nicht mit dem "Play" Knopf, sondern über die Konsole (Sie können in vscode über "Terminal->New Terminal" eine in Ihrem Projekt öffnen).
 
 # Aufgabe 01
 Schreiben und kompilieren Sie ein C++ Programm, welches ein graphisches Fenster öffnet und dort den Hintergrund Ihres Spiels anzeigt.
 
-Hierfür sind ein paar weitere Schritte nötig. Wir verwenden [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency (Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt inkludieren müssen. Vielleicht ist Ihnen das aus anderen Sprachen wie z.B. *Java (packages)* oder *Python (modules)* bereits bekannt. Da C++ eine kompilierte Sprache ist, gestaltet sich der Umgang mit externen Abhängigkeiten etwas komplizierter. Aber keine Angst, auch hier verwenden einige Tools, die uns das Leben einfacher machen: [Conan](https://conan.io) und [Cmake](https://cmake.org).
+Hierfür sind ein paar weitere Schritte nötig. Wir verwenden [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency (Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt inkludieren müssen. Vielleicht ist Ihnen das aus anderen Sprachen wie z.B. *Java (packages)* oder *Python (modules)* bereits bekannt. Da C++ eine kompilierte Sprache ist, gestaltet sich der Umgang mit externen Abhängigkeiten etwas komplizierter. Aber keine Angst, auch hier verwenden wir ein Tool, das uns das Leben einfacher macht: [Cmake](https://cmake.org). Wenn ales richtig funktioniert, lädt Cmake raylib herunter und integriert es in Ihr Projekt.
+
+Wir werden nun Schritt für Schritt die letzten benötigten Tools installieren... 
 
 #### Aufgabe 01_a
-Stellen Sie sicher, dass Sie sowohl Conan als auch Cmake auf Ihrem System installiert haben.
+Stellen Sie sicher, dass Sie Cmake auf Ihrem System installiert haben.
 
-Die Installation hängt von Ihrem System ab. Sollen Sie Linux verwenden, sollte es beide Programme über den Paketmanager Ihrer Linuxdistribution geben. Ansonsten hier der Link auf die offiziellen Dokumentationen:
-* Conan: https://conan.io/downloads
-* Cmake: https://cmake.org/download
+Die Installation hängt von Ihrem System ab. Sollen Sie Linux verwenden, sollte es beide Programme über den Paketmanager Ihrer Linuxdistribution geben (`sudo apt install cmake`). Ansonsten hier der Link auf die offiziellen Dokumentation: https://cmake.org/download
 
-Führen Sie folgendes Kommando in einem Terminal aus (egal aus welchem Ordner):
-> conan profile detect --force
-
-Sie sollte in etwa folgende Ausgabe erhalten:
-```
-conan profile detect --force
-detect_api: Found apple-clang 15.0
-detect_api: apple-clang>=13, using the major as version
-
-Detected profile:
-...
-Saving detected profile to /Users/eschroeder/.conan2/profiles/default
-```
 #### Aufgabe 01_b
 Im Ordner ```01_Asteroids``` finden Sie das Gerüst für ihr zukünftiges Spiel! 
-Stellen Sie sicher, dass Sie diese (noch leere) Gerüst, welches *raylib* als Abhängigkeit verwendet, mittels Conan und Cmake kompilieren können. 
+Stellen Sie sicher, dass Sie diese (noch leere) Gerüst, welches *raylib* als Abhängigkeit verwendet, mittels Cmake kompilieren können. 
 
-Laden Sie dazu als erstes die vscode-Erweiterung [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) herunter.
+Laden Sie dazu als erstes die vscode-Erweiterung [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) herunter.
 
-Führen Sie nun folgende Kommandos im Terminal aus (aus dem Wurzelverzeichnis dieses Repositories, also *PROG3_Ueb_Asteroids_Lab01*):
-> conan install . --output-folder=build/Release --build=missing
+Linux-Nutzer (Ubuntu) müssen in diesem Schritt noch ein paar fehlende Pakete installieren:
+`sudo apt install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev`
 
-> cd build/Release && cmake ../.. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
-
-Nun sollten Sie das Programm mittels des Befehls 
-
->cmake --build .
-
-kompilieren können. Alternativ können Sie auch die Taste F7 drücken oder den entsprechenden *Build* Button in der Fußzeile von vscode betätigen.
+TODO
 
 #### Aufgabe 01_c
 Nutzen Sie raylib-cpp, um ein leeres Fenster mit dem Hintergrundbild Ihres Spiels anzuzeigen.
