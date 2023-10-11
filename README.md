@@ -46,7 +46,7 @@ Laden Sie hier eine aktuelle Version herunter: [Cmake 3.27.7 macOS](https://gith
 Nun führen Sie im Terminal folgendes Kommando aus: `sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install=/usr/local/bin`. Wiederholen Sie nun `cmake --version`, es sollte die entsprechende Version angezeigt werden.
 
 #### Ubuntu
-1) Falls Sie cmake nicht installiert haben (`Command not found: cmake`): Installieren Sie es mit folgendem Kommando: `sudo apt install cmake`. Prüfen Sie nun die Version (`cmake --version`). Falls die Version nun passt, sind Sie fertig! Ansonsten:
+1) Falls Sie cmake nicht installiert haben (`Command not found: cmake`): Installieren Sie es mit folgendem Kommando: `sudo apt install cmake`. Prüfen Sie nun die Version (`cmake --version`). Falls die Version nun passt, gehen Sie zu Schritt 3! Ansonsten:
 
 2. 
     1. Falls Sie eine zu alte Version haben, deinstallieren Sie sie. Führen Sie im Terminal folgendes aus: `sudo apt uninstall cmake`. 
@@ -76,7 +76,7 @@ Hinweis: Sie können natürlich schon in diesem Schritt vscode als Editor verwen
 # Aufgabe 01
 Schreiben und kompilieren Sie ein C++ Programm, welches ein graphisches Fenster öffnet und dort den Hintergrund Ihres Spiels anzeigt.
 
-Hierfür sind ein paar weitere Schritte nötig. Wir verwenden [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency (Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt inkludieren müssen. Vielleicht ist Ihnen das aus anderen Sprachen wie z.B. *Java (packages)* oder *Python (modules)* bereits bekannt. Da C++ eine kompilierte Sprache ist, gestaltet sich der Umgang mit externen Abhängigkeiten etwas komplizierter. Aber keine Angst, auch hier verwenden wir ein Tool, das uns das Leben einfacher macht: [Cmake](https://cmake.org). Wenn alles richtig funktioniert, lädt Cmake raylib herunter und integriert es in Ihr Projekt.
+Hierfür sind ein paar weitere Schritte nötig. Wir verwenden [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency (Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt integrieren müssen. Vielleicht ist Ihnen das aus anderen Sprachen wie z.B. *Java (packages)* oder *Python (modules)* bereits bekannt. Da C++ eine kompilierte Sprache ist, gestaltet sich der Umgang mit externen Abhängigkeiten etwas komplizierter. Aber keine Angst, auch hier verwenden wir ein Tool, das uns das Leben einfacher macht: [Cmake](https://cmake.org). Wenn alles richtig funktioniert, lädt Cmake raylib herunter und integriert es in Ihr Projekt.
 
 #### Aufgabe 01_a
 Öffnen Sie den Ordner `Prog3_Ueb_Asteroids_Lab01` (wo auch diese Datei liegt) in vscode mittels 'File->Open Folder'. Damit die nächsten Schritte funktionieren, ist es wichtig, dass Sie das Projekt als Ordner in vscode geöffnet haben, nicht nur einzelne Dateien. Sie sollten in der linken Toolbar den Ordner mit allen seinen Dateien sehen:
