@@ -29,7 +29,7 @@ Sie benötigen einen C++ Compiler. Sie sollten aus Vorgängerveranstaltungen (PR
 
 Sehen sie etwas wie `Command not found: g++`, müssen Sie den Compiler erst noch installieren. Führen Sie folgenden Befehl im Terminal aus:
 * macOS: `xcode-select -install`
-* Ubuntu: `sudo apt install build-essentials`
+* Ubuntu: `sudo apt install build-essential`
 
 Wiederholen Sie danach das Kommando `g++`, es sollte nun funktionieren!
 
