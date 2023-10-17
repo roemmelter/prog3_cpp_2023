@@ -14,8 +14,7 @@ praktisch kennenlernen und anwenden.
 
 Wir fangen jedoch langsam an. In diesem ersten Lab sollen Sie sich mit der Entwicklungsumgebung und den dazugehörigen
 Tools vertraut machen. Sie werden ihr erstes simples C++ Programm schreiben und (manuell) kompilieren. Als nächstes
-werden Sie mithilfe von [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) Ihr
-erstes graphisches Programm in C++ schreiben,
+werden Sie mithilfe von [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) Ihr erstes graphisches Programm in C++ schreiben,
 welches Ihren Spiel-Hintergrund anzeigt. Am Ende werden Sie sich Gedanken machen, welche logische Architektur ihr Spiel
 benötigt und diese als C++ Klassen implementieren.
 
@@ -35,16 +34,24 @@ dokumentieren:
 
 ## Voraussetzungen und Setup der Entwicklungsumgebung
 
-Die Übungen sind so konzipiert, dass sie prinzipiell auf jedem System bearbeitet werden können. Es wird jedoch
-**wärmstens** empfohlen, Linux oder macOS zu verwenden. Nutzen Sie ggf. als Windows-Nutzer eine virtuelle Maschine.
-Dieses Dokument enthält Anleitungen für *macOS* sowie *Ubuntu 22.04*. Sollten Sie eine ältere Ubuntu-Version als 22.04.
-haben,
-installieren Sie bitte die aktuelle 22.04 (es wird die leichtgewichtige Ubuntu-Variante [Lubuntu](https://lubuntu.me)
-empfohlen).
+Die Übungen sind so konzipiert, dass sie prinzipiell auf jedem System bearbeitet werden können. Getestet wurde mit
+*macOS* sowie *Ubuntu 22.04* und Windows 11. Sollten Sie eine ältere Ubuntu-Version als 22.04. haben, installieren Sie
+bitte die aktuelle 22.04 (es wird die leichtgewichtige Ubuntu-Variante [Lubuntu](https://lubuntu.me) empfohlen).
 
 In diesem ersten Schritt werden wir die benötigte Software und Tools installieren.
 
-### Schritt 1 (Compiler)
+### Schritt 1 (CLion)
+
+Als Entwicklungsumgebung kommt Jetbrains CLion zum Einsatz. Stellen Sie sicher, dass Sie CLion auf Ihrem
+System installiert haben und ausführen können. Falls nicht, laden Sie die neuste Version hier
+herunter: [CLion Download](https://www.jetbrains.com/de-de/clion/). Hinweis: CLion ist eine kommerzielle Software.
+Nutzen Sie daher zuerst die 30-tägige Demoversion. Als Studierende an der TH Nürnberg bekommen Sie eine kostenlose
+Studierendenlizenz, kümmern Sie sich darum aber außerhalb des Praktikums (melden Sie sich hier mit Ihrer TH-Mailadresse
+an: https://www.jetbrains.com/shop/eform/students/).
+
+### Schritt 2 (Compiler) - nur Ubuntu und macOS!
+
+Wenn Sie Windows nutzen, überspringen Sie diesen Schritt (CLion bringt unter Windows einen passenden Compiler mit).
 
 Sie benötigen einen C++ Compiler. Sie sollten aus andern Veranstaltungen üblicherweise bereits eine lauffähige
 Installation haben. Testen Sie dies, indem Sie ein Terminal/Konsole öffnen und `g++` eintippen. Sie sollten eine
@@ -58,20 +65,13 @@ Befehl im Terminal aus:
 
 Wiederholen Sie danach das Kommando `g++`, es sollte nun funktionieren!
 
-### Schritt 2 (nur Ubuntu!)
+### Schritt 3 (weitere Pakete) - nur Ubuntu!
+
+Wenn Sie macOS oder Windows nutzen, überspringen Sie diesen Schritt!
 
 Wir benötigen noch ein paar weitere Systempakete. Führen Sie im Terminal folgendes aus:
 > sudo apt install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev
 > libxinerama-dev
-
-### Schritt 3 (CLion)
-
-Als Entwicklungsumgebung kommt Jetbrains CLion zum Einsatz. Stellen Sie sicher, dass Sie CLion auf Ihrem
-System installiert haben und ausführen können. Falls nicht, laden Sie die neuste Version hier
-herunter: [CLion Download](https://www.jetbrains.com/de-de/clion/). Hinweis: CLion ist eine kommerzielle Software.
-Nutzen Sie daher zuerst die 30-tägige Demoversion. Als Studierende an der TH Nürnberg bekommen Sie eine kostenlose
-Studierendenlizenz, kümmern Sie sich darum aber außerhalb des Praktikums (melden Sie sich hier mit Ihrer TH-Mailadresse
-an: https://www.jetbrains.com/shop/eform/students/).
 
 **Glückwunsch, Ihr System ist nun bereit für das erste Programm!**
 
@@ -81,21 +81,27 @@ an: https://www.jetbrains.com/shop/eform/students/).
 
 Öffnen Sie an dieser Stelle noch **nicht** CLion! Im Ordner `00_HelloMediaEngineers` finden Sie eine leere C++ Datei
 *main.cpp*. Öffnen Sie diese mit einem Texteditor und implementieren Sie, analog zur Vorlesung,
-ein simples Programm, das "Hello Media Engineers" auf der Konsole ausgibt.
+ein simples C++ Programm, das "Hello Media Engineers" auf der Konsole ausgibt.
 
 Kompilieren Sie dieses Programm **über das Terminal** und führen Sie es aus! Öffnen Sie dazu ein Terminal und navigieren
 in den Ordner `00_HelloMediaEngineers`. Kompilieren Sie das Programm nun über den entsprechenden Kommandozeilenbefehl
-und führen Sie es aus. Notieren Sie die benötigten Schritte im
+und führen Sie es aus. Wenn Sie nicht wissen wie, schauen Sie ins Skript oder eine Suchmaschine! Notieren Sie die
+benötigten Schritte im
 Protokoll.
+
+*Hinweis für Windows-Nutzer*: Falls Sie keinen Compiler auf Ihrem System installiert haben (und den integrierten
+Compiler in CLion nutzen möchten), müssen Sie dessen Pfad in der Kommandozeile vor den Compilerbefehl setzen (da der
+Compiler in diesem Fall nicht systemweit installiert ist und daher dem Terminal nicht bekannt ist). Der Pfad lautet in
+der Regel "C:\Program Files\JetBrains\CLion 2023.2.2\bin\mingw\bin" (nutzen Sie auch die Anführungszeichen, ansonsten
+kommt Windows nicht mit den Leerzeichen im Pfad klar...!).
 
 # Aufgabe 01
 
 **Schreiben und kompilieren Sie ein C++ Programm, welches ein grafisches Fenster öffnet und dort den Hintergrund Ihres
 Spiels anzeigt.**
 
-Wir verwenden [raylib](https://www.raylib.com)
-bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency (
-Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt integrieren müssen. Vielleicht ist Ihnen das
+Wir verwenden [raylib](https://www.raylib.com) bzw. [raylib-cpp](https://github.com/RobLoach/raylib-cpp) für Grafikausgabe. Dies ist eine s.g. *Dependency 
+(Abhängigkeit)*, d.h. ein externes Codemodul, welches wir in unser Projekt integrieren müssen. Vielleicht ist Ihnen das
 aus anderen Sprachen wie z.B. *Java (packages)* oder *Python (modules)* bereits bekannt. Da C++ eine kompilierte Sprache
 ist, gestaltet sich der Umgang mit externen Abhängigkeiten etwas komplizierter. Aber keine Angst, auch hier verwenden
 wir ein Tool, das uns das Leben einfacher macht: Cmake. In Verbindung mit CLion und der inkludierten
@@ -147,7 +153,7 @@ etwa so aussieht (im Ordner `01_Asteroids/resources` finden Sie ein paar Grafike
 Notieren Sie die wichtigsten Zeilen Ihres Programms im Protokoll!
 
 Ein kleiner Hinweis zu raylib: Dies ist eigentlich eine C-Bibliothek. Wir verwenden aber die Sprache C++ und wollen
-objektorierten Code schreiben. Daher nutzen wir *raylib-cpp*, s.g. *C++ Bindings*. Diese machen die C Bibliothek nativ
+objektorientierten Code schreiben. Daher nutzen wir *raylib-cpp*, s.g. *C++ Bindings*. Diese machen die C Bibliothek nativ
 aus C++ heraus nutzbar (mit Klassen und Vererbung und allem drum und dran). Die Dokumentation von raylib-cpp ist nicht
 vollständig (da sie ja nur die Funktionen von raylib etwas "schöner" in C++ macht und man doppelte Dokumentation
 unbedingt vermeiden will). Sie werden daher im Laufe der Übungen öfters die Dokumentation von der Standardversion von
@@ -155,16 +161,25 @@ raylib nutzen und selbständig die entsprechenden C++ Funktionsaufrufe herausfin
 einfach!).
 
 # Aufgabe 02
+**Machen Sie sich Gedanken über die Klassenstruktur Ihres Spiels und implementieren Sie Ihre erste Klasse.**
 
+#### Aufgabe 02_a
 Im Zentrum von objektorientierter Programmierung steht das *Objekt*, welches logisch zusammenhängende Daten, Zustände
 und Funktionalität kapselt. Überlegen Sie, welche *Objekte* es in Ihrem Spiel geben könnte und was diese tun bzw. welche
-Daten sie verwalten und in welcher Beziehung sie zueinander stehen. Dies muss noch nicht vollständig sein (im Laufe der
-Übungen werden sich immer noch Erweiterungen und Änderungen ergeben)!
+Daten sie verwalten und in welcher Beziehung sie zueinander stehen. Sie können dies schon in C++ tun, können Ihre 
+Antwort aber auch in Pseudocode oder Freitext formulieren. Auch muss die Klassenstruktur noch nicht vollständig sein 
+(im Laufe der Übungen werden sich immer noch Erweiterungen und Änderungen ergeben)!
 
 Notieren Sie ihre Antworten in Ihrem Protokoll!
 
-Implementieren Sie ein erstes Objekt (vielleicht das Spaceship?) als C++-Klasse mit dazugehörigen Daten und Methoden.
-Schreiben Sie Ihre main.cpp Datei so um, dass dort Instanzen des/der Objekt(e) erstellt werden und ggf. Methoden
-sinnvoll aufgerufen werden, um sie z.B. im Spielefenster anzuzeigen.
+#### Aufgabe 02_b
+Implementieren Sie ein erstes Objekt, das *Spaceship*, als C++-Klasse mit dazugehörigen Daten und Methoden.
+Schreiben Sie Ihre main.cpp Datei so um, dass dort eine Instanz des Objekts erstellt wird und Methoden
+sinnvoll aufgerufen werden, um es im Spielefenster anzuzeigen.
+
+Fügen Sie die wichtigsten Code-Schnipsel in ihr Protokoll hinzu!
+
+#### Aufgabe 02_c (Bonusaufgabe)
+Schaffen Sie es, zu implementieren, dass das Spaceship mittels Tastatureingaben steuerbar ist?
 
 Fügen Sie die wichtigsten Code-Schnipsel in ihr Protokoll hinzu!
