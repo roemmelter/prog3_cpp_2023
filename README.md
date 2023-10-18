@@ -7,10 +7,10 @@ Autor: Prof. Dr.-Ing. Enrico Schröder - enrico.schroeder@th-nuernberg.de
 # Übersicht
 
 Im Laufe des Semesters werden Sie ein kleines Spiel in C++ schreiben (als Beispiel dient *Asteroids* - Sie können jedoch
-auch ein anderes Spiel entwickeln) und dabei die wichtigsten Konzepte von Objektorientiertem Programmieren und C++
+auch ein anderes Spiel entwickeln) und dabei die wichtigsten Konzepte von objektorientiertem Programmieren und C++
 praktisch kennenlernen und anwenden.
 
-![](screenshot_asteroids.png)
+![](screenshots/screenshot_asteroids.png)
 
 Wir fangen jedoch langsam an. In diesem ersten Lab sollen Sie sich mit der Entwicklungsumgebung und den dazugehörigen
 Tools vertraut machen. Sie werden ihr erstes simples C++ Programm schreiben und (manuell) kompilieren. Als nächstes
@@ -35,7 +35,7 @@ dokumentieren:
 ## Voraussetzungen und Setup der Entwicklungsumgebung
 
 Die Übungen sind so konzipiert, dass sie prinzipiell auf jedem System bearbeitet werden können. Getestet wurde mit
-*macOS* sowie *Ubuntu 22.04* und Windows 11. Sollten Sie eine ältere Ubuntu-Version als 22.04. haben, installieren Sie
+*macOS* sowie *Ubuntu 22.04* und *Windows 11*. Sollten Sie eine ältere Ubuntu-Version als 22.04. haben, installieren Sie
 bitte die aktuelle 22.04 (es wird die leichtgewichtige Ubuntu-Variante [Lubuntu](https://lubuntu.me) empfohlen).
 
 In diesem ersten Schritt werden wir die benötigte Software und Tools installieren.
@@ -53,7 +53,7 @@ an: https://www.jetbrains.com/shop/eform/students/).
 
 Wenn Sie Windows nutzen, überspringen Sie diesen Schritt (CLion bringt unter Windows einen passenden Compiler mit).
 
-Sie benötigen einen C++ Compiler. Sie sollten aus andern Veranstaltungen üblicherweise bereits eine lauffähige
+Sie benötigen einen C++ Compiler. Sie sollten aus anderen Veranstaltungen üblicherweise bereits eine lauffähige
 Installation haben. Testen Sie dies, indem Sie ein Terminal/Konsole öffnen und `g++` eintippen. Sie sollten eine
 Ausgabe `Error: no input files` o.ä. sehen. In diesem Falle machen Sie mit Schritt 2 weiter!
 
@@ -115,12 +115,12 @@ werden aber später noch etwas mit der Cmake-Konfiguration in Kontakt kommen.
 sehen. Klicke Sie auf 'Open' und wählen dort den Ordner `Prog3_Ueb_Asteroids_Lab01` (wo auch diese Datei liegt).
 Es sollte sich der 'Open Project Wizard' öffnen:
 
-![](screenshot_clion_0.png)
+![](screenshots/screenshot_clion_0.png)
 
-Klicken Sie auf 'Next' und dann auf 'Finish'. Sie sollten nun in der oberen Symbolleiste ein paar Buttons vorfinden, so
-wie hier:
+Klicken Sie auf 'Next' und dann auf 'Finish', um die standardmäßigen Compiler-Einstellungen zu akzeptieren.
+Sie sollten nun in der oberen Symbolleiste ein paar Buttons vorfinden, so wie hier:
 
-![](screenshot_clion_1.png)
+![](screenshots/screenshot_clion_1.png)
 
 Klicken Sie nun auf den kleinen Hammer ('Build'), um das leere Programm zu kompilieren. Nach einigen Sekunden sollten
 Sie eine Ausgabe wie diese sehen:
@@ -148,7 +148,7 @@ raylib-cpp: https://github.com/RobLoach/raylib-cpp.
 Erweitern Sie die Datei ```01_Asteroids/src/main.cpp``` um die entsprechenden Funktionsaufrufe, sodass das Programm in
 etwa so aussieht (im Ordner `01_Asteroids/resources` finden Sie ein paar Grafiken für Ihr Spiel):
 
-![](screenshot_background.png)
+![](screenshots/screenshot_aufgabe01.png)
 
 Notieren Sie die wichtigsten Zeilen Ihres Programms im Protokoll!
 
