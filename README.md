@@ -183,3 +183,10 @@ Fügen Sie die wichtigsten Code-Schnipsel in ihr Protokoll hinzu!
 Schaffen Sie es, zu implementieren, dass das Spaceship mittels Tastatureingaben steuerbar ist?
 
 Fügen Sie die wichtigsten Code-Schnipsel in ihr Protokoll hinzu!
+
+--------------
+### Art Credit
+Spaceship: opengameart.org, License Creative Commons 0 - Public Domain,
+Bullets: opengameart.org, License Creative Commons 4 - (c) @janachumi,
+Background: generated with Adobe Firefly,
+Ohmsteroid: License Creative Commons 4 - (c) E.Schröder
