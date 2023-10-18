@@ -42,3 +42,4 @@ CMakeFiles/
 build/
 CMakeUserPresets.json
 .DS_Store
+/cmake-build-*/
