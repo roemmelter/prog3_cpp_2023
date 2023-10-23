@@ -1,6 +1,6 @@
 # PROG3 Lab 01
 
-Autor: Prof. Dr.-Ing. Enrico Schröder - enrico.schroeder@th-nuernberg.de
+Autor: Prof. Dr.-Ing. Enrico Schröder, OHM Technische Hochschule Nürnberg, Fakultät EFI
 
 **Willkommen zur ersten Übung zur Veranstaltung PROG3 / Teil B!**
 
