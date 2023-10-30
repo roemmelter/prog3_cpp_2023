@@ -190,3 +190,6 @@ Spaceship: opengameart.org, License Creative Commons 0 - Public Domain,
 Bullets: opengameart.org, License Creative Commons 4 - (c) @janachumi,
 Background: generated with Adobe Firefly,
 Ohmsteroid: License Creative Commons 4 - (c) E.Schröder
+
+### Code Credit
+Code forked from [Prof. Dr.-Ing. Enrico Schröder](https://github.com/enricoschroeder): https://github.com/enricoschroeder/Prog3_Ueb_Asteroids_Lab01
